@@ -11,6 +11,7 @@ Route::get('/', function () {
 
 // Inventory routes
 Route::get('/inventory/setup', [InventoryController::class, 'index'])->name('inventory.setup');
+Route::get('/inventory/fallback', [InventoryController::class, 'fallback'])->name('inventory.fallback');
 Route::get('/inventory', Dashboard::class)->name('inventory.dashboard');
 
 Route::view('dashboard', 'dashboard')
