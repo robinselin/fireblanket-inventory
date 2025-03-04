@@ -72,7 +72,7 @@ class Dashboard extends Component
         
         return view('livewire.inventory.dashboard', [
             'packs' => $packs,
-        ]);
+        ])->layout('components.layouts.inventory');
     }
     
     public function addOrder($packId)
