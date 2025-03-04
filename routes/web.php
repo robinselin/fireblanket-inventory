@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\InventoryController;
 use App\Livewire\Inventory\Dashboard;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
@@ -8,7 +9,8 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-// Inventory route - no authentication required
+// Inventory routes
+Route::get('/inventory/setup', [InventoryController::class, 'index'])->name('inventory.setup');
 Route::get('/inventory', Dashboard::class)->name('inventory.dashboard');
 
 Route::view('dashboard', 'dashboard')
