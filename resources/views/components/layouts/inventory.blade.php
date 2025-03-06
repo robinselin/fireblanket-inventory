@@ -13,14 +13,16 @@
                         </a>
                         <h1 class="text-xl font-semibold text-gray-900">Fire Blanket Inventory</h1>
                     </div>
-                    @auth
-                        <a href="{{ route('dashboard') }}" class="text-indigo-600 hover:text-indigo-900">Dashboard</a>
-                    @else
-                        <div>
-                            <a href="{{ route('login') }}" class="text-indigo-600 hover:text-indigo-900 mr-4">Log in</a>
+                    <div class="flex space-x-4">
+                        <a href="{{ route('inventory.dashboard') }}" class="text-indigo-600 hover:text-indigo-900">Inventory</a>
+                        <a href="{{ route('inventory.warehouse') }}" class="text-indigo-600 hover:text-indigo-900">Warehouse</a>
+                        @auth
+                            <a href="{{ route('dashboard') }}" class="text-indigo-600 hover:text-indigo-900">Dashboard</a>
+                        @else
+                            <a href="{{ route('login') }}" class="text-indigo-600 hover:text-indigo-900">Log in</a>
                             <a href="{{ route('register') }}" class="text-indigo-600 hover:text-indigo-900">Register</a>
-                        </div>
-                    @endauth
+                        @endauth
+                    </div>
                 </div>
             </header>
 
